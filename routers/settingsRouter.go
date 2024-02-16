@@ -4,8 +4,9 @@ import (
 	"chinatown_server/api"
 )
 
-func (router RouterGroup) SettingsRouter(goup string) {
-	settingsRouters := router.Group(goup)
+// 系统配置api
+func (router RouterGroup) SettingsRouter() {
+	settingsRouters := router.Group("/settings")
 	{
 		settingsApi := api.ApiGroupApp.SettingApi
 		settingsRouters.GET("/", settingsApi.SettingsInfoView)

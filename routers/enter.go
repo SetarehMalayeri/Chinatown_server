@@ -16,8 +16,7 @@ func InitRouter() *gin.Engine {
 
 	routers := RouterGroup{r}
 
-	//系统配置api
-	routers.SettingsRouter("/settings")
+	routers.SettingsRouter() //系统配置api
 
 	return r
 }
